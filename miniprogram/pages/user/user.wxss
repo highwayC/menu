@@ -1,0 +1,128 @@
+page {
+  background-color: #fff;
+}
+.user {
+  position: relative;
+  width:100%;
+  height:420rpx;
+}
+.user>image {
+  width:100%;
+  height:100%;
+}
+.user .userInfo {
+  position: absolute;
+  top:60%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.user .userInfo image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.user .user-info {
+  height:80rpx;
+  width:180rpx;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.user .register {
+  height:100%;
+  width:100%;
+  border: 4rpx dashed rgb(175, 173, 173);
+  color:rgb(209, 137, 137);
+  font-size: 34rpx;
+  /* line-height: 80rpx; */
+  text-align: center;
+}
+
+.function {
+  background-color:rgb(249, 238, 238);
+  margin:0 auto;
+  margin-top: 30rpx;
+  width: 94%;
+  height:600rpx;
+  border-radius: 30rpx;
+  display: flex;
+  flex-direction: column;
+}
+.function .service {
+  flex: 2;
+  width:100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.function .service image {
+  width: 80rpx;
+  height:80rpx;
+}
+.function .function-content {
+  flex:3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.function .function-content image {
+  width: 60rpx;
+  height:60rpx;
+  margin-right:10rpx;
+}
+.function .function-content text {
+  display: inline-block;
+}
+.function .function-content .user-content {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding:0 30rpx;
+}
+.function .function-content .user-content .more {
+  position: absolute;
+  right:30rpx;
+}
+.function .function-content .user-content button {
+  font-weight: 400;
+  width: 100%;
+  height:100%;
+  line-height: 90rpx;
+  text-align: start;
+  margin:0;
+  padding: 0;
+}
+.sleep {
+  width: 100%;
+  height: 600rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sleep image {
+  width:200rpx;
+}
+.sleep .slepp-word {
+  color:#8a8a8a;
+  font-size: 30rpx;
+}
+.quit {
+  background-color:rgb(249, 238, 238);
+  margin:0 auto;
+  margin-top: 30rpx;
+  width: 94%;
+  height:80rpx;
+  border-radius: 30rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color:rgb(209, 137, 137);
+  font-weight: 700;
+}

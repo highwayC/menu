@@ -1,0 +1,82 @@
+<canvas id="canvasId"  class="canvasId" canvas-id="canvasId" style="width:{{width}}px;height:{{height}}px;"></canvas>
+<block wx:if="{{isLogin}}">
+  <view class="main">
+    <block wx:if="{{isFood}}">
+    <view class="block">
+      <view class="block-content">
+        <text class="block-clear" bindtap="blockclear">×</text>
+        <form bindsubmit="blockSubmit">
+          <view class="block-food">
+            <text>用料</text>
+            <input type="text" maxlength='12' placeholder="请输入用料" placeholder-class="ph" name="foodName" value="{{blockValue}}"></input>
+          </view>
+          <view class="block-count">
+            <text>用量</text>
+            <input type="text" placeholder="请输入用量" placeholder-class="ph" name="count" value="{{blockValue}}"></input>
+          </view>
+          <view class="block-ensure">
+            <button form-type="submit">确定</button>
+          </view>
+        </form>
+      </view>
+    </view>
+  </block>
+  <form bindsubmit="submit" class="addPro">
+    <view class="dish-name">
+      <text decode>标题<text class="limit">(不能超过10字)</text>&nbsp;<text style="color:red">*</text></text>
+      <input placeholder="请输入您的菜谱标题" maxlength='11' placeholder-class="ph" name="dishName" value="{{value}}"></input>
+    </view>
+    <view class="dish-pic">
+      <text decode>菜谱的成品图&nbsp;<text style="color:red">*</text></text>
+      <block wx:if="{{!isPic}}">
+        <view class="step-pic" bindtap="selectPic">
+          <text>＋添加成品图</text>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="step-pic">
+          <image src="{{workPic}}" mode="aspectFill"></image>
+          <view class="change" bindtap="selectPic">编辑</view>
+        </view>
+      </block>
+    </view>
+    <view class="dish-type">
+      <text decode>选择菜谱类型&nbsp;<text style="color:red">*</text></text>
+      <picker bindchange="bindPickerChange" value="{{Index}}" range="{{array}}">
+        <view class="addType" bindtap="selectType">+</view>
+      </picker>
+      <view class="showType">{{array[Index]}}</view>
+    </view>
+    <view class="dish-cook">
+      <!-- 小程序页面中text里套text，里层的text标签绑定bindtap事件不能触发 -->
+      <text decode>添加用料&nbsp;<text style="color:red">*</text></text>
+      <text class="addFood" bindtap="addFood">+</text>
+      <block wx:for="{{FoodList}}" wx:key="foodName">
+        <view class="FoodList">
+          <text>{{item.foodName}}</text>
+          <text>{{item.count}}</text>
+          <text bindtap="deleteFood" data-num="{{index}}">×</text>
+        </view>
+      </block>
+    </view>
+    <view class="steps">
+      <text decode bindtap="Tosteps">编辑做法&nbsp;<text style="color:red">*</text><text decode class="more">&gt;</text></text>
+        <view class="picList">
+          <block wx:for="{{stepsList}}" wx:key="Img">
+            <view class="stepImg">
+              <image src="{{item.Img}}"></image>
+              <view class="numImg">{{index+1}}</view>
+            </view>
+          </block>
+        </view>
+    </view>
+    <button form-type="submit" class="submit">提交</button>
+  </form>
+  </view>
+</block>
+<block wx:else>
+  <view class="login-condition">
+    <image src="/icons/sleep2.png" mode="widthFix"></image>
+    <view class="show-word">请先去登录哦</view>
+  </view>
+</block>

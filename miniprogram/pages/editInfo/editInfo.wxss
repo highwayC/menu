@@ -1,0 +1,32 @@
+.edit-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section {
+  position: relative;
+  height:150rpx;
+  width: 96%;
+  background-color: #fff;
+  margin-top:10rpx;
+}
+.section .step-text {
+  height:100%;
+  width: 100%;
+  padding: 15rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.section .foot{
+  font-size: 27rpx;
+  position: absolute;
+  bottom:5rpx;
+  right:10rpx;
+  color: rgb(179, 176, 176);
+}
+.section button {
+  position: absolute;
+  bottom:-70rpx;
+  right:5rpx;
+  font-size: 26rpx;
+}

@@ -1,0 +1,115 @@
+.head {
+  position: relative;
+  height:400rpx;
+  width:100%;
+}
+.head .bg {
+  height: 100%;
+  width: 100%;
+}
+.head .bg image{
+  height: 100%;
+  width: 100%;
+  background-color: rgb(227, 227, 227);
+}
+.head .search-box {
+  position: absolute;
+  left:5rpx;
+  top:360rpx;
+  height:70rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.head .search-box icon {
+  position: absolute;
+  top:15rpx;
+  left: 70rpx;
+  color: #ccc;
+  font-size: 32rpx;
+}
+.head .search-box .search {
+  padding-left: 75rpx;
+  height: 100%;
+  width:78%;
+  border: 1rpx solid #ccc;
+  background-color: rgb(255, 255, 255);
+  border-radius: 37rpx;
+  box-shadow:0rpx 0rpx 20rpx #888888;
+}
+
+/* 分类框 */
+.nav {
+  position: relative;
+  top:140rpx;
+  left:0;
+  height:400rpx;
+  width:100%;
+  display: flex;
+  justify-content: space-around;
+}
+.nav .nav-title {
+  position: absolute;
+  top:-70rpx;
+  left:0;
+  font-weight: 700;
+  font-size: 36rpx;
+  margin-left: 15rpx;
+}
+
+.nav .more {
+  position: absolute;
+  top:-50rpx;
+  right:0;
+  font-size: 27rpx;
+  color: rgb(136, 133, 133);
+}
+.nav .cate {
+  height:100%;
+  width:150rpx;
+}
+.nav .cate image {
+  height:150rpx;
+  width:150rpx;
+  border-radius: 50%;
+  background-color: rgb(227, 227, 227);
+}
+.nav .cate view {
+  text-align: center;
+}
+
+/* 热门菜谱 */
+.footer {
+  height:80rpx;
+  width: 100%;
+  margin-bottom: 15rpx;
+}
+.footer .footer-title {
+  height:100%;
+  width:100%;
+  padding-top:15rpx;
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 34rpx;
+  margin-bottom: 10rpx;
+  border-radius: 25rpx;
+  background-color:#fff;
+  box-shadow:0rpx 0rpx 17rpx #b6b3b3;
+}
+.footer .footer-title image{
+  height:50rpx;
+  width:50rpx;
+  vertical-align:text-bottom;
+}
+/* .recom {
+  position: relative; */
+  /* 在CSS的布局中，早期采用布局多半是依赖于float属性，但元素浮动之后会造成容器的高度坍塌。为了避免这个现象，有了各式各样的清除浮动的黑魔法。 */
+  /* flow-root是最新一种创建BFC的属性。 */
+  /* display: flow-root; */
+/* } */
+
+/* 热门推荐 */
+.waterfall {
+  position: relative;
+}

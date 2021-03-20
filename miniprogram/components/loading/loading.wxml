@@ -1,0 +1,8 @@
+<view wx:if="{{loading}}" class="loading">
+  <view class="loaidng-icon"></view>
+  <text>{{loadingText}}</text>
+</view>
+<view wx:if="{{isAllLoaded}}" class="all-loaded" >
+  <view class="all-loaded-line"></view>
+  <text class="all-loaded-text">{{allLoadedText}}</text>
+</view>

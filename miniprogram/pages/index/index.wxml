@@ -1,0 +1,51 @@
+<!-- 搜索框 start -->
+<view class="head">
+  <swiper class="bg" circular autoplay interval="4500">
+    <block wx:for="{{swiperList}}" wx:key="id">
+      <swiper-item bindtap="toDetails" data-id="{{item.id}}" data-name="{{item.name}}">
+        <image src="{{item.Pic}}" mode="aspectFill"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="search-box">
+    <icon type="search" ></icon>
+    <input type="text" class="search" placeholder="请输入菜谱" disabled bindtap="search"></input>
+  </view>
+</view>
+<!-- 搜索框 over -->
+<!-- 分类框 start -->
+<view class="nav">
+    <view class="nav-title">
+      <text>菜谱分类</text>
+    </view>
+    <text decode class="more" bindtap="showMenu">查看更多&gt;&gt;</text>
+    <view class="cate" bindtap="todishDetails" data-title="家常菜">
+      <image src="cloud://highway-fi8lb.6869-highway-fi8lb-1302259954/images/1595664851548.jpg"></image>
+      <view>家常菜</view>
+    </view>
+     <view class="cate" bindtap="todishDetails" data-title="创意菜">
+      <image src="cloud://highway-fi8lb.6869-highway-fi8lb-1302259954/images/1595664851573.jpg"></image>
+      <view>创意菜</view>
+    </view>
+     <view class="cate" bindtap="todishDetails" data-title="下饭菜">
+      <image src="cloud://highway-fi8lb.6869-highway-fi8lb-1302259954/images/1595664851742.jpg"></image>
+      <view>下饭菜</view>
+    </view>
+     <view class="cate" bindtap="todishDetails" data-title="快手菜">
+      <image src="cloud://highway-fi8lb.6869-highway-fi8lb-1302259954/images/1595664851628.jpg"></image>
+      <view>快手菜</view>
+    </view>
+</view>
+<!-- 分类框 over -->
+<!-- 热门菜谱 start -->
+<!-- style="position:{{isFixed? 'fixed;top:0rpx;z-index:999;' : 'relative;'}}" -->
+<view class="footer" >
+ <view class="footer-title">
+    <image src="../../icons/food.png"></image>
+    <text>--热门推荐--</text>
+  </view>
+</view>
+<waterfall Allheight="{{Allheight}}" col1="{{col1}}" col2="{{col2}}" id="item" num1="0" num2="1">
+  <loading loading="{{loading}}" isAllLoaded="{{isAllLoaded}}"></loading>
+</waterfall>
+<!-- 热门菜谱 over -->

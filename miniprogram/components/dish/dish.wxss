@@ -1,0 +1,85 @@
+/* 有些图标在组件中显示不出，所以要在组件的wxss中再次引入图标文件 */
+@import "../../style/iconfont.wxss";
+.dish {
+  height:180rpx;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  margin-bottom: 12rpx;
+}
+.dish .dishPic{
+  width: 160rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 使用flex布局时，当后面的文字过多时，前面的view会被挤压 */
+  /* 给前面的view的样式中添加一句：flex-shrink: 0; 意思是flex的收缩为0，不压缩的意思 */
+  flex-shrink: 0;
+}
+.dish .dishPic image {
+  height:140rpx;
+  width:140rpx;
+  border-radius: 10rpx;
+  background-color: rgb(227, 227, 227);
+}
+.dish .dishInfo {
+  flex:1;
+  height:100%;
+  padding:10rpx 0;
+  padding-left:10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  color: rgb(87, 87, 87);
+}
+/* .dish .dishInfo .dish-title {
+  font-weight: 700;
+  font-size: 38rpx;
+} */
+.dish .dishInfo .dish-meterial {
+  font-size: 25rpx;
+  color:rgb(152, 152, 152);
+  width: 350rpx;
+  /*超出隐藏 */
+  overflow:hidden; 
+  /* 溢出显示用省略号 */
+  text-overflow:ellipsis; 
+  /* 溢出不换行 */
+  white-space:nowrap; 
+}
+.dish .dishInfo .bottom {
+  width: 100%;
+  height:50rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dish .dishInfo .bottom .dish-auth{
+  float: left;
+  font-size:25rpx;
+  color:#8a8a8a;
+}
+.dish .dishInfo .bottom .count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dish .houseCount,
+.dish .likeCount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:0 12rpx;
+  height:100%;
+  color: #e92525;
+  font-size: 25rpx;
+}
+.dish .houseCount .Icon,
+.dish .likeCount .Icon {
+  height:100%;
+  width:20rpx;
+  font-size: 25rpx;
+  margin-right:8rpx;
+}

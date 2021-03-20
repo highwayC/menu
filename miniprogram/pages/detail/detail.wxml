@@ -1,0 +1,119 @@
+<!-- 该菜谱详情 start -->
+<view class="dish">
+  <view class="head">
+    <image class="pic" src="{{content.Pic}}" mode="aspectFill"></image>
+    <view class="dish-info">
+      <view class="dish-name">{{content.dishName}}</view>
+      <view class="author">
+        <text decode>By:&nbsp;&nbsp;</text>
+        <image src="{{content.userImg}}" bindtap="toUserInfo"></image>
+        <text>{{content.username}}</text>
+      </view>
+      <view class="count">
+        <text decode>{{content.collects}}&nbsp;收藏</text>
+        <text decode>{{content.like}}&nbsp;喜欢</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 该菜谱详情 over -->
+<!-- 用料 start -->
+<view class="ingredients">
+  <text>用料</text>
+  <text class="ingre-count">{{content.food.length}}种</text>
+  <view class="clearfix ingre-info">
+    <block wx:for="{{content.food}}" wx:key="foodName">
+      <text class="content" decode>{{item.foodName}}&nbsp;{{item.count}}</text>
+    </block>
+  </view>
+</view>
+<!-- 用料 over -->
+<!-- 做法步骤 start -->
+<view class="steps">
+  <text>做法步骤</text>
+  <text class="steps-count">{{content.steps.length}}步</text>
+  <view class="clearfix steps-info">
+    <view class="steps-details item-{{index}}" wx:for="{{ImgList}}" wx:key="Img">
+      <view class="steps-num">{{index+1}}</view>
+      <view class="steps-content">{{content.steps[index].message}}</view>
+      <image src="{{item.show? item.Img:''}}" mode="widthFix" bindtap="showBig" data-src="{{item.Img}}"></image>
+    </view>
+  </view>
+</view>
+<!-- 做法步骤 over -->
+<!-- 评论区 start -->
+<view class="comment">
+  <text>评论</text>
+  <block wx:if="{{commentList.length!=0}}">
+    <view class="comment-main" wx:for="{{commentList}}" wx:key="_id">
+      <view class="auth-img">
+        <image src="{{item.userImg}}"></image>
+      </view>
+      <view class="auth-content">
+        <text class="auth-name">{{item.userName}}</text>
+        <text class="content-time">{{item.commentTime}}</text>
+        <text class="content-main">{{item.msg}}</text>
+        <block wx:if="{{item.followComment.length!=0}}">
+          <view class="follow-content" wx:for="{{item.followComment}}" wx:for-item="follow" wx:key="followMsg">
+            <text class="follow-name">{{follow.authName}}：</text>
+            <text class="follow-main">{{follow.followMsg}}</text>
+          </view>
+        </block>
+        <view class="follow-edit" bindtap="showInput" data-index="1" data-id="{{item._id}}" data-num="{{index}}">来说点什么吧..</view>
+      </view>
+      <view class="auth-like" bindtap="commentLike" data-index="{{index}}">
+        <image src="{{item.isLike? '/icons/heart-0.png':'/icons/heart.png'}}"></image>
+        <text>{{item.like}}</text>
+      </view>
+    </view>
+    <loading loading="{{loading}}" isAllLoaded="{{isAllLoaded}}"></loading>
+  </block>
+  <block wx:else>
+    <view class="no-more">没有更多评论了...</view>
+  </block>
+</view>
+<!-- 评论区 over -->
+<!-- 输入内容 start -->
+<view class="input-content" wx:if="{{showInput}}" style="bottom: {{ inputTop==0? -110:inputTop }}px;">
+  <textarea placeholder="说点什么吧.." focus="{{showInput}}" maxlength="-1" show-confirm-bar="{{false}}" adjust-position="{{false}}" 
+  bindfocus="comtFocus" bindblur="comtBlur" value="{{inputValue}}" bindinput="inputComment"></textarea>
+  <button disabled="{{inputValue==''? true:false}}" bindtap="sendMessage">发送</button>
+</view>
+<!-- 输入内容 over -->
+<!-- 固定底部 start -->
+<view class="bottom">
+  <view class="say">
+    <text bindtap="showInput" data-index="2">发表评论</text>
+  </view>
+  <block wx:if="{{isLike}}">
+    <view class="box" bindtap="unLike">
+      <image src="/icons/heart-0.png"></image>
+      <text>已点赞</text>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="box" bindtap="like">
+      <image src="/icons/heart.png"></image>
+      <text>点赞</text>
+    </view>
+  </block>
+  <block wx:if="{{isHouse}}">
+  <view class="box" bindtap="unHouse">
+    <image src="/icons/star-0.png"></image>
+    <text>已收藏</text>
+  </view>
+  </block>
+  <block wx:else>
+  <view class="box" bindtap="house">
+    <image src="/icons/star.png"></image>
+    <text>收藏</text>
+  </view>
+  </block>
+  <view class="box-share">
+    <!-- <image src="/icons/share.png"></image> -->
+    <button open-type="share">
+    <text class="iconfont icon-fenxiang"></text>
+    分享</button>
+  </view>
+</view>
+<!-- 固定底部 over -->

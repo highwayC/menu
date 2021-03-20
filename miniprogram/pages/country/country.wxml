@@ -1,0 +1,7 @@
+<view class="country-view" wx:for="{{countryList}}" wx:key="code" bindtap="getCountry" data-index="{{index}}">
+  <text>{{item.cn}}</text>
+  <view>
+    <text wx:if="{{index==countryIndex}}">已选地区</text>
+    <text decode class="text-view">&gt;</text>
+  </view>
+</view>

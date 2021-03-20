@@ -1,0 +1,31 @@
+@import "./style/iconfont.wxss";
+button {
+  background: initial;
+}
+
+button:focus{
+  outline: 0;
+}
+
+button::after{
+  border: none;
+}
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+page, view, text, swiper, swiper-item, image, navigator,button {
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+}
+/*清除浮动*/ 
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}

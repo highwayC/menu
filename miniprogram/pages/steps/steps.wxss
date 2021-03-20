@@ -1,0 +1,102 @@
+.edit .head {
+  /* background-color: #fff; */
+  height:80rpx;
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.edit .head .cancel,
+.edit .head .ensure {
+  background-color: rgba(201, 198, 198, 0.3);
+  height: 65rpx;
+  width: 100rpx;
+  line-height: 65rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  margin:0 15rpx;
+  font-size: 28rpx;
+}
+.edit .head .title {
+  font-weight: 700;
+}
+.content {
+  margin-top: 30rpx;
+}
+.step-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height:50rpx;
+  width: 100%;
+}
+.step-head>text:first-child {
+  font-size: 34rpx;
+  font-weight: 700;
+}
+.step-head .delete,
+.next {
+  width:150rpx;
+  height:40rpx;
+  font-size: 27rpx;
+  color: rgb(169, 166, 166);
+  background-color: rgb(233, 228, 228);
+  margin-right: 10rpx;
+  line-height: 40rpx;
+  text-align: center;
+  border-radius: 20rpx;
+}
+.step-pic {
+  height:350rpx;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  margin:10rpx 0 15rpx;
+  color:#ccc;
+  position: relative;
+}
+.step-pic image {
+  height:100%;
+  width:100%;
+}
+.step-pic .change {
+  position: absolute;
+  top:10rpx;
+  right:15rpx;
+  color:#fff;
+  background-color: rgba(179, 176, 176, 0.3);
+  font-size: 26rpx;
+  width:80rpx;
+  height:40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  border-radius: 20rpx;
+}
+.section {
+  position: relative;
+  height:200rpx;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 55rpx;
+  background-color: #fff;
+}
+.section .step-text {
+  height:200rpx;
+  width: 96%;
+  background-color: #fff;
+}
+.section .foot{
+  font-size: 27rpx;
+  position: absolute;
+  bottom:-40rpx;
+  right:10rpx;
+  color: rgb(179, 176, 176);
+}
+.next {
+  width: 175rpx;
+  color:#d81e06;
+  margin:0 0 20rpx;
+}

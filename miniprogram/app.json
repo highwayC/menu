@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/add/add",
+    "pages/user/user",
+    "pages/search/search",
+    "pages/menuDetails/menuDetails",
+    "pages/dishDetails/dishDetails",
+    "pages/detail/detail",
+    "pages/steps/steps",
+    "pages/userInfo/userInfo",
+    "pages/cookDetail/cookDetail",
+    "pages/userDetail/userDetail",
+    "pages/country/country",
+    "pages/editInfo/editInfo"
+  ],
+  "window": {
+    "navigationStyle": "default",
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#d81e06",
+    "navigationBarTitleText": "菜谱",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#d81e06",
+    "backgroundColor": "#fafafa",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icons/home.png",
+        "selectedIconPath": "icons/home-0.png"
+      },
+      {
+        "pagePath": "pages/add/add",
+        "text": "",
+        "iconPath": "icons/add.png",
+        "selectedIconPath": "icons/add-0.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "icons/my.png",
+        "selectedIconPath": "icons/my-0.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

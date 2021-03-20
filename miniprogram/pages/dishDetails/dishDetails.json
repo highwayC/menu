@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "dish":"../../components/dish/dish",
+    "loading":"../../components/loading/loading"
+  }
+}

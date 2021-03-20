@@ -1,0 +1,29 @@
+<canvas id="canvasId"  class="canvasId" canvas-id="canvasId" style="width:{{width}}px;height:{{height}}px;"></canvas>
+<!-- 修改用户信息 start -->
+<view class="userPic" bindtap="changePic" data-index="1">
+  <text>头像</text>
+  <image src="{{userInfo.avatarUrl}}"></image>
+</view>
+<view class="userbg" bindtap="changePic" data-index="2">
+  <text>主页背景</text>
+  <text decode>&gt;</text>
+</view>
+<view class="username" bindtap="toEditInfo" data-index="1">
+  <text>昵称</text>
+  <text class="name">{{userInfo.nickName}}</text>
+</view>
+<picker bindchange="bindPickerChange" value="{{genderIndex}}" range="{{genderArray}}">
+  <view class="usergender">
+    <text>性别</text>
+    <text class="name">{{userInfo.gender==1? '男':'女'}}</text>
+  </view>
+</picker>
+<view class="usercountry" bindtap="toCountry">
+  <text>地区</text>
+  <text class="name">{{userInfo.country}}</text>
+</view>
+<view class="userinfo" bindtap="toEditInfo" data-index="2">
+  <text>简介</text>
+  <text class="name">{{userInfo.userInfo==''? '未填写':userInfo.userInfo}}</text>
+</view>
+<!-- 修改用户信息 over -->

@@ -1,0 +1,32 @@
+<block wx:if="{{isLike}}">
+<view class="content">
+  <view class="content-div" style="height: {{height}}rpx;">
+    <view class="TouchArea item-{{index}}" wx:for="{{likeList}}" wx:key="_id">
+      <movable-area class="moveArea">
+        <movable-view class="move-start" direction="horizontal" bindtouchstart="startMove" bindtouchend="endMove" 
+        data-index="{{index}}" x="{{index == deleteIndex? (isOpen? '-160rpx':'0'):''}}" bindtap="toDetails" data-id="{{item._id}}" data-name="{{item.dishName}}">
+          <view class="dishPic">
+            <image src="{{item.show? item.Pic:''}}"></image>
+          </view>
+          <view class="dishInfo">
+            <text class="dish-title">{{item.dishName}}</text>
+            <view class="dish-meterial">用料：{{item.food}}</view>
+            <view class="Count"> 
+              <text decode>{{item.like}}人喜欢&nbsp;&nbsp;&nbsp;</text>
+              <text>{{item.collects}}人收藏</text>
+            </view>
+          </view>
+        </movable-view>
+      </movable-area>
+      <view class="delete" bindtap="deleteDish" data-id="{{item._id}}" data-index="{{index}}">删除</view>
+    </view>
+  </view>
+  <loading loading="{{loading}}" isAllLoaded="{{isAllLoaded}}"></loading>
+</view>
+</block>
+<block wx:else>
+  <view class="bg">
+    <image src="/icons/upset.png" mode="widthFix"></image>
+    <view class="bg-word">{{showWord}}</view>
+  </view>
+</block>

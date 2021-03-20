@@ -1,0 +1,30 @@
+.canvasId{
+	position: absolute;
+	top:-9999rpx;
+	left: -9999rpx;
+	z-index: 0;
+	width: 690rpx;
+	height: 690rpx;
+}
+.userPic, .username, .usergender, .usercountry, .userinfo, .userbg {
+  height:120rpx;
+  width:100%;
+  margin-bottom: 10rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+}
+.userPic image {
+  height:100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+}
+.name {
+  font-size: 28rpx;
+  color: rgb(145, 144, 144);
+}
+.block {
+  position: relative;
+}

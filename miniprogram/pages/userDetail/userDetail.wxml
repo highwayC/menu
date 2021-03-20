@@ -1,0 +1,55 @@
+<image src="{{user.bg? user.bg:'../../icons/pic.jpg'}}" class="bg"></image>
+<view class="main">
+  <!-- 用户信息 start -->
+   <view class="user-info">
+    <view class="user-section">
+      <view class="one">
+        <image src="{{user.avatarUrl}}"></image>
+      </view>
+      <view class="two">
+        <view class="fans"><text decode>{{user.fans}}&nbsp;</text>粉丝</view>
+        <view class="fans"><text decode>{{user.knows}}&nbsp;</text>关注</view>
+        <view class="user-edit" bindtap="toEditInfo">编辑资料</view>
+      </view>
+    </view>
+    <view class="user-name">{{user.nickName}}</view> 
+    <view class="xingbie"><text class="iconfont icon-xingbie"></text>{{user.gender==1? '男':'女'}}</view>
+    <view class="diqu"><text class="iconfont icon-diqu"></text>{{user.country}}</view>
+    <view class="user-brief">{{user.userInfo}}</view>
+  </view>
+  <!-- 用户信息 over -->
+  <!-- 菜谱及收藏夹 start -->
+  <view class="user-detail">
+    <view class="list_item {{is_active == 0 ? 'active':''}}" bindtap="changeMenu" data-index="0">菜谱</view>
+    <view class="list_item {{is_active == 1 ? 'active':''}}" bindtap="changeMenu" data-index="1">收藏</view>
+  </view>
+  <swiper bindchange="changeSwiper" current="{{is_active}}" style="height:{{is_active=='0' ? Allheight1+75 : Allheight2+75}}rpx;">
+    <swiper-item>
+      <block wx:if="{{!hasOne}}">
+        <view class="bg">
+          <image src="../../icons/sleep.png"></image>
+          <text>暂无更多</text>
+        </view>
+      </block>
+      <block wx:else>
+        <waterfall Allheight="{{Allheight1}}" col1="{{col1}}" col2="{{col2}}" id="item" num1="0" num2="1">
+          <loading loading="{{loading1}}" isAllLoaded="{{isAllLoaded1}}"></loading>
+        </waterfall>
+      </block>
+    </swiper-item>
+    <swiper-item>
+      <block wx:if="{{!hasTwo}}">
+        <view class="bg">
+          <image src="../../icons/sleep.png"></image>
+          <text>暂无更多</text>
+        </view>
+      </block>
+      <block wx:else>
+        <waterfall Allheight="{{Allheight2}}" col1="{{col1Two}}" col2="{{col2Two}}" id="item1" num1="2" num2="3">
+          <loading loading="{{loading2}}" isAllLoaded="{{isAllLoaded2}}"></loading>
+        </waterfall>
+      </block>
+    </swiper-item>
+  </swiper>
+  <!-- 菜谱及收藏夹 over -->
+</view>

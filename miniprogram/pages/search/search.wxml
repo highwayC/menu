@@ -1,0 +1,55 @@
+<!-- 搜索框 start -->
+<view class="search-box">
+    <view class="search">
+      <icon type="search" ></icon>
+      <input type="text" placeholder="土豆焖鸭" placeholder-class="phClass" focus bindconfirm="search" 
+      confirm-type="search" value="{{value}}" bindinput="Input"></input>
+      <block wx:if="{{isDetail}}">
+        <text class="clear" bindtap="clearContent">×</text>
+      </block>
+    </view>
+    <text class="goBack" bindtap="goBack">取消</text>   
+</view>
+<!-- 搜索框 over -->
+<!-- 推荐搜索 start -->
+<block wx:if="{{!isDetail}}">
+  <view class="recom">
+    <text>热门推荐</text>
+    <view class="clearfix recom-info">
+      <block wx:for="{{recomList}}" wx:key="*this">
+        <text class="content" bindtap="toSearch" data-name="{{item}}">{{item}}</text>
+      </block>
+    </view>
+  </view>
+</block>
+<!-- 推荐搜索 over -->
+<!-- 最近搜索 start-->
+<block wx:if="{{newList.length&&(!isDetail)}}">
+  <view class="new">
+    <text>最近搜索</text>
+    <text class="deleteAll .iconfont .icon-lajixiang" bindtap="deleteAll"></text>
+    <view class="clearfix ">
+      <block wx:for="{{newList}}" wx:key="*this">
+        <view class="new-info">
+          <icon type="search" ></icon>
+          <text class="content" bindtap="search_new" data-item="{{item}}" data-index="{{index}}">{{item}}</text>
+          <text class="shift" bindtap="delete" data-index="{{index}}">×</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</block>
+<!-- 最近搜索 over -->
+<!-- 搜索详情 start -->
+<block wx:if="{{isDetail}}">
+  <view class="Content">
+    <block wx:if="{{dishList.length}}">
+      <dish dishList="{{dishList}}" height="{{height}}" id="search"></dish>
+      <loading loading="{{loading}}" isAllLoaded="{{isAllLoaded}}"></loading>
+    </block>
+    <block wx:else>
+      <text class="other">{{otherText}}</text>
+    </block>
+  </view>
+</block>
+<!-- 搜索详情 over -->

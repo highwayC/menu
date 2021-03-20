@@ -1,0 +1,315 @@
+.head {
+  height:560rpx;
+  width:100%;
+  background-color: #fff;
+}
+.head .pic {
+  width:100%;
+  height:350rpx;
+  background-color: rgb(237, 233, 233);
+}
+.head .dish-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.head .dish-info .dish-name {
+  font-weight: 700;
+  font-size: 38rpx;
+  margin: 20rpx 0;
+}
+.head .dish-info .author {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rpx;
+  font-size: 29rpx;
+}
+.head .dish-info .author>text:first-child {
+  font-weight: 700;
+  font-size: 36rpx;
+}
+.head .dish-info .author image{
+  width: 50rpx;
+  height:50rpx;
+  border-radius: 50rpx;
+  margin-right: 15rpx;
+  background-color: rgb(237, 233, 233);
+}
+.head .dish-info .count {
+  color: #8a8a8a;
+  font-size: 26rpx;
+}
+.head .dish-info .count text:first-child{
+  margin-right: 15rpx;
+}
+/* 用料 */
+.ingredients,
+.steps {
+  background-color: #fff;
+  margin-top: 20rpx;
+  padding:35rpx 0 50rpx;
+}
+.ingredients>text:first-child,
+.steps>text:first-child,
+.comment>text:first-child {
+  font-weight: 700;
+  font-size: 38rpx;
+  margin: 0 20rpx 0 10rpx;
+}
+.ingredients .ingre-count,
+.steps .steps-count {
+  color: #c1bcbc;
+  font-size: 29rpx;
+}
+.ingredients .ingre-info,
+.steps .steps-info{
+  margin-top: 20rpx;
+}
+.ingredients .ingre-info .content{
+  float: left;
+  background-color: #e3e3e3;
+  margin: 10rpx;
+  padding:8rpx 20rpx;
+  border-radius: 10rpx;
+  font-size: smaller;
+}
+/* 做法步骤 */
+.steps {
+  padding-bottom: 5rpx;
+}
+.steps .steps-details {
+  display: float;
+  width: 100%;
+  /* height:250rpx; */
+  display: flex;
+  margin-bottom: 25rpx;
+}
+.steps .steps-num {
+  flex:1;
+  padding-left: 18rpx;
+  font-weight: 700;
+  font-size: 38rpx;
+  color: #d81e06;
+}
+.steps .steps-content {
+  flex:4;
+  font-size: 29rpx;
+  padding-right:6rpx;
+}
+.steps .steps-details image {
+  flex:3;
+  width: 100%;
+  height: 220rpx;
+  background-color: rgb(237, 233, 233);
+}
+/* 底部固定栏 */
+.bottom {
+  position: fixed;
+  z-index: 999;
+  bottom:0;
+  width:100%;
+  height:80rpx;
+  background-color: #fff;
+  display: flex;
+}
+.bottom .say {
+  height: 100%;
+  width:200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bottom .say text {
+  height: 56rpx;
+  width:170rpx;
+  border-radius: 20rpx;
+  background-color: rgb(236, 244, 236);
+  color: rgb(187, 182, 182);
+  font-size: 26rpx;
+  line-height: 56rpx;
+  text-align: center;
+}
+.bottom .box {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border-right: 2rpx solid #afabab;
+  border-radius: 20rpx; */
+}
+.bottom .box:last-child {
+  border-right: 0;
+}
+.bottom .box image {
+  width:50rpx;
+  height:50rpx;
+  margin-right: 10rpx;
+  background-color: #fff;
+}
+.bottom .box text {
+  color: #8a8a8a;
+  font-size: 28rpx;
+}
+.bottom .box-share {
+  height: 100%;
+  width:180rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bottom .box-share button {
+  height:56rpx;
+  width:140rpx;
+  margin:0;
+  padding: 0;
+  line-height: 56rpx;
+  color: #fff;
+  background-color: #d81e06;
+  border-radius: 25rpx;
+  font-size: 28rpx;
+  font-weight: 400;
+}
+
+/* 评论区 */
+.comment {
+  margin-bottom: 80rpx;
+}
+.comment>text:first-child {
+  display: inline-block;
+  width: 100%;
+  height:90rpx;
+  line-height: 90rpx;
+  margin:0;
+  margin-top: 20rpx;
+  padding-left: 10rpx;
+  background-color: #fff;
+}
+.comment .no-more {
+  padding-top: 10rpx;
+  padding-left: 40rpx;
+  padding-bottom: 15rpx;
+  font-size: 27rpx;
+  color: #c1bcbc;
+  background-color: #fff;
+}
+.comment .comment-main {
+  display: flex;
+  width: 100%;
+  /* height: 300rpx; */
+  background-color: #fff;
+  margin-top: 13rpx;
+}
+.comment .comment-main .auth-img {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  /* background-color: aliceblue; */
+}
+.comment .comment-main .auth-img image {
+  margin-top: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.comment .comment-main .auth-content {
+  width:65%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: bisque; */
+}
+.comment .comment-main .auth-content .auth-name {
+  margin-top: 30rpx;
+  margin-bottom: 10rpx;
+  color:rgb(8, 8, 101);
+}
+.comment .comment-main .auth-content .content-time {
+  margin-bottom: 15rpx;
+  margin-left:6rpx;
+  font-size: 23rpx;
+  color: #a29f9f;
+}
+.comment .comment-main .auth-content .content-main {
+  margin-bottom: 15rpx;
+  font-size: 25rpx;
+}
+.comment .comment-main .follow-content {
+  width: 100%;
+  margin-bottom: 5rpx;
+}
+.comment .comment-main .follow-content .follow-name {
+  font-size: 24rpx;
+  color:rgb(8, 8, 101);
+}
+.comment .comment-main .follow-content .follow-main {
+  font-size: 23rpx;
+  color: #a29f9f;
+}
+.comment .comment-main .follow-edit {
+  width: 70%;
+  height:35rpx;
+  margin-top: 8rpx;
+  margin-bottom: 18rpx;
+  padding-left: 10rpx;
+  font-size: 23rpx;
+  color: #a29f9f;
+  border: 1rpx solid rgb(142, 138, 138);
+  border-radius: 15rpx;
+}
+.comment .comment-main .auth-like {
+  width: 20%;
+  margin-top:30rpx;
+  /* background-color: blue; */
+  display: flex;
+  justify-content: center;
+  font-size: 26rpx;
+}
+.comment .comment-main .auth-like image {
+  width: 35rpx;
+  height:35rpx;
+  margin-right: 3rpx;
+}
+
+/* 输入内容 */
+.input-content {
+  position: fixed;
+  width: 100%;
+  height:265rpx;
+  padding-top: 15rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #e6e3e3;
+}
+.input-content textarea {
+  width: 690rpx;
+  height: 135rpx;
+  margin-left:20rpx;
+  margin-right: 20rpx;
+  padding: 14rpx;
+  font-size: 31rpx;
+  color: #050505; 
+  background-color: #fff;
+  border-radius: 6rpx;
+}
+.input-content button {
+  position: absolute;
+  bottom:15rpx;
+  right:10rpx;
+  width:90rpx;
+  min-height: 65rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  margin:0;
+  padding: 0;
+  margin-left:8rpx;
+  margin-right:8rpx;
+  margin-top: 15rpx;
+  background-color: rgb(21, 157, 21);
+  color: #fff;
+  font-size: 30rpx;
+}
+

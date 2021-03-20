@@ -1,0 +1,57 @@
+<!-- 用户栏 start -->
+<view class="user">
+  <image src="/icons/userbg.jpg"></image>
+  <view class="{{isLogin? 'userInfo':'user-info'}}">
+    <block wx:if="{{isLogin}}">
+      <image src="{{userInfo.avatarUrl}}" bindtap="toUserDetail"></image>
+      <view>{{userInfo.nickName}}</view>
+    </block>
+    <!-- 需要使用 button 来授权登录, 这样才能弹出授权询问框 -->
+    <block wx:else>
+      <button class="register" open-type="getUserInfo" bindgetuserinfo="getuserInfo">登录</button>
+    </block>
+  </view>
+</view>
+<!-- 用户栏 over -->
+<block wx:if="{{isLogin}}">
+  <!-- 功能框 start -->
+  <view class="function">
+    <view class="service">
+      <view class="user-content" bindtap="toAdd"> 
+        <image src="/icons/post.png"></image>
+        <view>发布菜谱</view>
+      </view>
+      <view class="user-content" bindtap="toHouseDetail" data-index="1"> 
+        <image src="/icons/mypost.png"></image>
+        <view>我的菜谱</view>
+      </view>
+    </view>
+    <view class="function-content">
+      <view class="user-content" bindtap="toUserinfo"> 
+        <image src="/icons/update.png"></image>
+        <text>个人信息</text>
+        <text decode class="more">&gt;</text>
+      </view>
+      <view class="user-content" bindtap="toHouseDetail" data-index="2"> 
+        <image src="/icons/house.png"></image>
+        <text>我的收藏</text>
+        <text decode class="more">&gt;</text>
+      </view>
+      <view class="user-content"> 
+        <image src="/icons/suggest.png"></image>
+        <button open-type="feedback">建议反馈</button>
+        <text decode class="more">&gt;</text>
+      </view>
+    </view>
+  </view>
+  <!-- 功能框 over -->
+  <!-- 退出登录 start -->
+  <view class="quit" bindtap="quitLogin">退出登录</view>
+  <!-- 退出登录 over -->
+  </block>
+<block wx:else>
+  <view class="sleep">
+    <image src="/icons/sleep2.png" mode="widthFix"></image>
+    <view class="slepp-word">登录后查看更多</view>
+  </view>
+</block>

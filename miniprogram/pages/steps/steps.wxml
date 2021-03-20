@@ -1,0 +1,34 @@
+<!-- 编辑做法 start -->
+<view class="edit">
+  <view class="head">
+    <view class="cancel" bindtap="stepCancel">取消</view>
+    <view class="title">编辑做法</view>
+    <view class="ensure" bindtap="stepEnsure">确认</view>
+  </view>
+  <view class="content">
+    <block wx:for="{{stepsList}}" wx:key="Img">
+      <view class="step-head">
+      <text>步骤{{index+1}}</text>
+      <text decode class="delete" bindtap="stepDelete" data-num="{{index}}">×&nbsp;删除本步</text>
+      </view>
+      <block wx:if="{{item.isPic}}">
+        <view class="step-pic">
+          <image src="{{item.Img}}" mode="aspectFill"></image>
+          <view class="change" bindtap="selectPic" data-num="{{index}}">编辑</view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="step-pic" bindtap="selectPic" data-num="{{index}}" >
+          <text>＋添加步骤图</text>
+        </view>
+      </block>
+      <view class="section">
+        <textarea placeholder="添加步骤说明" class="step-text" 
+      data-num="{{index}}" bindinput="stepMessage" maxlength="200" value="{{item.message}}"></textarea>
+        <view class="foot">{{currentWordNumber[index]? currentWordNumber[index]:0}}/200</view>
+      </view>
+    </block>
+    <view class="next" bindtap="addNext">＋添加下一步</view>
+  </view>
+</view>
+<!-- 编辑做法 over -->

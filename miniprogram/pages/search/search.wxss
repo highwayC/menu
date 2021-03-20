@@ -1,0 +1,116 @@
+.search-box {
+  position: fixed;
+  top:0;
+  width: 100%;
+  height:100rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1rpx solid rgb(226, 226, 226);
+}
+.search-box .search {
+  position: relative;
+  width: 84%;
+  height:60rpx;
+  padding-left: 10rpx;
+  float: left;
+}
+.search-box .goBack {
+  display: inline-block;
+  height:60rpx;
+  width:16%;
+  line-height: 60rpx;
+  text-align: center;
+  color:rgb(161, 162, 163);
+}
+.search-box .search icon {
+  position: absolute;
+  top:10rpx;
+  left:30rpx;
+}
+.search-box .search input {
+  /* border:1rpx solid red; */
+  height:100%;
+  width:89%;
+  border-radius: 27rpx;
+  padding-left:70rpx;
+  background-color: rgb(223, 223, 223);
+}
+.search-box .search .clear {
+  position: absolute;
+  /* 因为微信小程序中绝对定位（position: absolute）会让bindtap失效，所以加z-index:100;就可以了 */
+  z-index:100;  
+  top:17rpx;
+  right:15rpx;
+  height:30rpx;
+  width: 30rpx;
+  color:#fff;
+  text-align: center;
+  line-height: 30rpx;
+  border-radius: 50%;
+  background-color: rgb(173, 184, 184);
+}
+
+/* 热门推荐 */
+.recom,
+.new {
+  background-color: #fff;
+  padding:12rpx 0;
+  margin-top:20rpx;
+}
+.recom {
+  margin-top:120rpx;
+}
+.recom>text:first-child,
+.new>text:first-child {
+  font-size: 38rpx;
+  margin: 0 20rpx 0 10rpx;
+}
+.recom .recom-info {
+  margin-top: 20rpx;
+}
+.recom .recom-info .content{
+  float: left;
+  background-color: #e3e3e3;
+  margin: 10rpx;
+  padding:8rpx 20rpx;
+  border-radius: 25rpx;
+  font-size: smaller;
+  color: #635d5d;
+}
+
+/* 最近搜索 */
+.new .deleteAll {
+  /* position: absolute; */
+  float: right;
+  padding-right: 18rpx;
+}
+.new-info {
+  display: flex;
+  color: #635d5d;
+  margin-top: 6rpx;
+}
+.new-info:first-child {
+  margin-top: 20rpx;
+}
+.new-info icon {
+  flex:1;
+  text-align: center;
+}
+.new-info .content {
+  flex:7;
+}
+.new-info .shift {
+  flex:1;
+  text-align: center;
+}
+
+/* 搜索详情 */
+.Content {
+  margin-top: 100rpx;
+  position: relative;
+}
+.Content .other {
+  color: #bab8b8;
+  font-size: 27rpx;
+}

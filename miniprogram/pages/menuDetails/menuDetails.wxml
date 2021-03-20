@@ -1,0 +1,23 @@
+<!-- 搜索框 start -->
+<view class="search-box">
+    <icon type="search" ></icon>
+    <input type="text" class="search" placeholder="大家都在搜索：土豆焖鸭" placeholder-class="phClass" disabled bindtap="search"></input>
+</view>
+<!-- 搜索框 over -->
+<!-- 菜谱分类 start -->
+<view class="menu">
+  <!-- 一个分类模块 start-->
+  <view class="clearfix menulist" wx:for="{{funcList}}" wx:for-item="func" wx:key="*this">
+    <view class="menu-title">{{func}}</view>
+    <view class="menu-content">
+      <block wx:for="{{menuList}}" wx:for-item="menu" wx:key="_id">
+        <view wx:if="{{menu.belong==func}}" class="item-{{index}}">
+          <image src="{{menu.show? menu.Img:''}}" bindtap="todishDetails" data-title="{{menu.recipeTypeName}}"></image>
+          <view class="menuName">{{menu.recipeTypeName}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 一个分类模块 over -->
+</view>
+<!-- 菜谱分类 over -->

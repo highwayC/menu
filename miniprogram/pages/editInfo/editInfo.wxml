@@ -1,0 +1,8 @@
+<view class="edit-view">
+  <view class="section">
+    <textarea placeholder="介绍一下吧~" class="step-text" bindinput="stepMessage" maxlength="{{count}}" value="{{content}}" auto-focus></textarea>
+    <view class="foot">{{currentWordNumber}}</view>
+    <button type="primary" size="mini" disabled="{{isDisabled}}" bindtap="changeInfo">保存</button>
+  </view>
+</view>
+

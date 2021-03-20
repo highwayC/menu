@@ -1,0 +1,114 @@
+.bg {
+  width:100%;
+  height:350rpx;
+}
+page{
+  background-color: #fff;
+}
+.main .user-info {
+  width: 100%;
+}
+.main .user-info .user-section {
+  width: 100%;
+  height:150rpx;
+  display: flex;
+  /* background-color: green; */
+}
+.main .user-info .user-section .one {
+  width:28%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .user-info .user-section .one image {
+  width:150rpx;
+  height:150rpx;
+  border: 5rpx solid #fff;
+  border-radius: 50%;
+  position: relative;
+  top:-15%;
+  background-color: rgb(240, 238, 238);
+}
+.main .user-info .user-section .two {
+  margin-top: 10rpx;
+  width: 72%;
+}
+.main .user-info .user-section .two .fans {
+  display: inline-block;
+  font-size: 27rpx;
+  margin-right: 35rpx;
+}
+.main .user-info .user-section .two .fans text {
+  font-weight: 700;
+  font-size: 32rpx;
+}
+.main .user-info .user-section .two .user-edit {
+  width:500rpx;
+  height:48rpx;
+  font-weight: 700;
+  font-size: 26rpx;
+  line-height: 48rpx;
+  text-align: center;
+  margin-top: 15rpx;
+  background-color: rgb(240, 238, 238);
+  border-radius: 8rpx;
+}
+.main .user-info .user-name {
+  font-weight: 700;
+  margin-left:15rpx;
+  margin-bottom: 10rpx;
+}
+.main .user-info .xingbie,
+.main .user-info .diqu {
+  display: inline-block;
+  background-color: rgb(237, 235, 235);
+  margin-left: 15rpx;
+  padding: 0 10rpx;
+  font-size: 24rpx;
+  border-radius: 15rpx;
+}
+.main .user-info .xingbie text,
+.main .user-info .diqu text {
+  color: rgb(250, 2, 2);
+  font-size: 26rpx;
+}
+.main .user-info .user-brief {
+  font-size: 27rpx;
+  margin-left: 15rpx;
+  margin-top: 15rpx;
+}
+.main .user-detail {
+  /* margin-top:20rpx; */
+  background-color: #fff;
+  height:80rpx;
+  width: 100%;
+}
+.main .user-detail .list_item {
+  /* background-color: antiquewhite; */
+  display: inline-block;
+  margin:10rpx 25rpx;
+  padding: 10rpx 0;
+  font-size: 26rpx;
+  font-weight: 700;
+}
+.main .user-detail .active {
+  color: rgb(250, 2, 2);
+  border-bottom: 5rpx solid rgb(250, 2, 2);
+}
+.main swiper .bg{
+  width: 100%;
+  height:300rpx;
+  /* background-color: aqua; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.main swiper .bg image {
+  width: 150rpx;
+  height:150rpx;
+}
+.main swiper .bg text {
+  color: rgb(170, 170, 170);
+  font-size: 26rpx;
+}

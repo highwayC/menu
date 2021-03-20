@@ -1,0 +1,4 @@
+<view class="List">
+  <dish dishList="{{dishList}}" height="{{height}}" id="Dish"></dish>
+  <loading loading="{{loading}}" isAllLoaded="{{isAllLoaded}}"></loading>
+</view>

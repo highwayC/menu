@@ -1,0 +1,41 @@
+<view class="waterfall">
+  <view class="img" style="height:{{Allheight}}rpx;">
+    <view class="dish1 item-{{num1}}" wx:for="{{col1}}" wx:key="index" style="position:absolute; top:{{item.colH}}rpx; left:18rpx; width:{{item.width}}rpx;height:{{item.height+110}}rpx;" 
+        bindtap="toDetails" data-id="{{item._id}}" data-name="{{item.dishName}}">
+        <!-- {{item.show? item.Pic:''}} -->
+      <image class="bigImg" src='{{item.show? item.Pic:""}}' style="width:{{item.width}}rpx;height:{{item.height}}rpx;"></image>
+      <view class="content">
+        <text class="dish-title">{{item.dishName}}</text>
+          <view class="dish-info">
+            <view class="dish-maker">
+            <!-- {{item.show? item.userImg:''}} -->
+              <image src="{{item.show? item.userImg:''}}"></image>
+              <text>{{item.username}}</text>
+            </view>
+            <view class="dish-like">
+              <image src="/icons/heart.png"></image>
+              <text>{{item.like}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="dish2 item-{{num2}}" wx:for="{{col2}}"  wx:key="index" style="position:absolute; top:{{item.colH}}rpx; right:18rpx;width:{{item.width}}rpx;height:{{item.height+110}}rpx;" 
+      bindtap="toDetails" data-id="{{item._id}}" data-name="{{item.dishName}}">
+        <image class="bigImg" src='{{item.show? item.Pic:""}}' style="width:{{item.width}}rpx;height:{{item.height}}rpx;"></image>
+        <view class="content">
+          <text class="dish-title">{{item.dishName}}</text>
+          <view class="dish-info">
+            <view class="dish-maker">
+              <image src="{{item.show? item.userImg:''}}"></image>
+              <text>{{item.username}}</text>
+            </view>
+            <view class="dish-like">
+              <image src="/icons/heart.png"></image>
+              <text>{{item.like}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <slot></slot>
+</view>

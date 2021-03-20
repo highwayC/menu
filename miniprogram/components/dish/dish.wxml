@@ -1,0 +1,24 @@
+<view class="prent-class" style="width:100%;height:{{height}}rpx;background-color:#f6f6f6;">
+  <view class="dish item-3" wx:for="{{dishList}}" wx:key="_id" bindtap="toDetails" data-id="{{item._id}}" data-name="{{item.dishName}}">
+    <view class="dishPic">
+      <image src="{{item.show? item.Pic:''}}"></image>
+    </view>
+    <view class="dishInfo">
+      <text class="dish-title">{{item.dishName}}</text>
+      <view class="dish-meterial">用料：{{item.food}}</view>
+      <view class="bottom">
+        <view class="dish-auth">By {{item.username}}</view>
+        <view class="count">
+          <view class="houseCount"> 
+            <view class="iconfont icon-stars-lines Icon"></view>
+            <text>{{item.collects}}</text>
+          </view>
+          <view class="likeCount">
+            <view class="iconfont icon-xin Icon"></view>
+            <text>{{item.like}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
